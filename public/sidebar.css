@@ -1,0 +1,22 @@
+.sideNav {
+  background-color: white;
+  outline-style: solid;
+  outline-color: blue;
+  box-shadow: 5px 5px 7px #888888;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  outline:none
+}
+
+.nav-link:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-link:active {
+  color: black;
+  text-decoration: none;
+}
