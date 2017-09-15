@@ -19,9 +19,9 @@ class Sidebar extends React.Component {
     const navStyle = {outlineColor: this.state.color};
     const linkStyle = {color: this.state.color};
     return (
-      <div className="row">
-        <div className="col-md-2 col-xl-1 ml-5">
-          <div className="sideNav" style={navStyle}>
+      <div className="row vertical-center">
+        <div className="col-4 my-auto">
+          <div id="sideNav" style={navStyle}>
             <ul className="nav flex-column text-center">
               {links.map((link) =>
                 <li className="nav-item" key={link.name}>

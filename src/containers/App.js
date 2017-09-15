@@ -1,47 +1,20 @@
 import React from 'react';
 import { ConnectedRouter } from 'react-router-redux';
 import { Route } from 'react-router-dom';
-import { history } from '../configureStore';
+import { history } from '../modules/store';
 
 import Home from './Home';
 import About from './About';
-// import Header from './Header';
-import Sidebar from './Sidebar';
+import Work from './Work';
 
 class App extends React.Component {
   render() {
-    const links = [
-      {
-        name: 'Home',
-        path: '/home',
-        color: 'red',
-      },
-      {
-        name: 'About',
-        path: '/about',
-        color: 'green',
-      },
-      {
-        name: 'HomeAlt',
-        path: '/home',
-        color: 'blue',
-      },
-    ]
     return (
       <ConnectedRouter history={history}>
-        <div>
-          <div className="row">
-            <div className="col-12">
-              space
-            </div>
-          </div>
-
-          <Sidebar links={links} />
-
-          <div className="container">
-            <Route exact path="/home" component={ Home }/>
-            <Route path="/about" component={ About } />
-          </div>
+        <div className='full-height'>
+          <Route exact path="/home" component={ Home }/>
+          <Route path="/about" component={ About } />
+          <Route path="/work" component={ Work } />
         </div>
       </ConnectedRouter>
     );

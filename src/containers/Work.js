@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 
-class About extends React.Component {
+class Work extends React.Component {
   render() {
     const links = [
       {
@@ -26,12 +26,12 @@ class About extends React.Component {
           <Sidebar links={links}/>
         </div>
         <div>
-          <h1>About</h1>
-          <p>Welcome About!</p>
+          <h1>Work</h1>
+          <p>Welcome Work!</p>
         </div>
       </div>
     );
   }
 };
 
-export default About;
+export default Work;
