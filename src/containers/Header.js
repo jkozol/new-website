@@ -1,21 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NavBarTop from '../components/NavBarTop';
+import Logo from '../components/Logo';
 
 class Header extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <Link to="/" className="navbar-brand">React2Gifs</Link>
-          </div>
-          <ul className="nav navbar-nav navbar-right">
-            <li className="nav-item" key={1}>
-              <Link className="nav-link" to="/about">About</Link>
-            </li>
-          </ul>
+      <div className="row">
+        <div className="col-md-2">
+          <Logo />
         </div>
-      </nav>
+        <div className="col-md-4 offset-md-2 ">
+          <NavBarTop />
+        </div>
+      </div>
     );
   }
 };
