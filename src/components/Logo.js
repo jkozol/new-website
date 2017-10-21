@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Logo extends React.Component {
   render() {
     return (
-      <Link to="/" className="navbar-brand">Jacob Kozol</Link>
+      <NavLink className="navbar-brand" id="logo" to='/home'>Jacob</NavLink>
     );
   }
 };

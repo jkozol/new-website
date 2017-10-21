@@ -1,5 +1,9 @@
-html, body, #app, .container-fluid {
-  height: 100%;  /* Fallback for browsers do NOT support vh unit */
+html, body, #app, #app>div {
+  height: 100%
+}
+
+.container-fluid {
+  height: 100%
 }
 
 .nav-link {
@@ -17,10 +21,6 @@ html, body, #app, .container-fluid {
 .nav-link:active {
   color: black;
   text-decoration: none;
-}
-
-.full-height {
-  height: 100%;
 }
 
 .vertical-center {

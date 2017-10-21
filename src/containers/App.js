@@ -11,7 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <ConnectedRouter history={history}>
-        <div className='full-height'>
+        <div>
           <Route exact path="/home" component={ Home }/>
           <Route path="/about" component={ About } />
           <Route path="/work" component={ Work } />

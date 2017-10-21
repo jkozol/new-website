@@ -18,22 +18,15 @@ class Home extends React.Component {
     ]
 
     return (
-      <div className="full-height">
-        <div className="container">
-          <div>
-            <Header />
+      <div className="container-fluid">
+        <Header />
+        <div className="row mt-5" id="pageBody">
+          <div className="col-2 offset-1">
+            <Sidebar links={links}/>
           </div>
-        </div>
-        <div className="mx-0 px-0" id="topNavLine"></div>
-        <div className="container full-height" id="pageBody">
-          <div className="row full-height">
-            <div className="col-4 my-auto">
-              <Sidebar links={links}/>
-            </div>
-            <div className="col-8" id="contents">
-              <h1>Home</h1>
-              <p>Welcome home!</p>
-            </div>
+          <div className="col-8 offset-1">
+            <h1>Home</h1>
+            <p>Welcome home!</p>
           </div>
         </div>
       </div>
