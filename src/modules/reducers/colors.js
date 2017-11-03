@@ -1,5 +1,5 @@
 import {
-  SET_COLOR_ACTIVE, SET_COLOR_TEXT,
+  SET_COLOR_ACTIVE, SET_COLOR_TEXT, SET_COLOR_HOVER,
 } from '../actions/colors';
 
 const colors = (state = [], action) => {
@@ -13,6 +13,11 @@ const colors = (state = [], action) => {
       return {
         ...state,
         colorText: action.payload.color,
+      };
+    case SET_COLOR_HOVER:
+      return {
+        ...state,
+        colorHover: action.payload.color,
       };
     default:
       return state;

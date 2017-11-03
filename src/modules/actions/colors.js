@@ -17,3 +17,13 @@ export function setColorText(color) {
     },
   };
 }
+
+export const SET_COLOR_HOVER = 'SET_COLOR_HOVER';
+export function setColorHover(color) {
+  return {
+    type: SET_COLOR_HOVER,
+    payload: {
+      color,
+    },
+  };
+}

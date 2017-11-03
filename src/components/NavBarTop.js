@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class NavBarTop extends React.Component {
   render() {
     return (
-      <ul className="nav nav-tabs">
+      <ul className="nav">
         <li className="nav-item dropdown mx-3">
           <a className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
           <div className="dropdown-menu">

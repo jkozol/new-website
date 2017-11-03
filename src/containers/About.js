@@ -21,10 +21,10 @@ class About extends React.Component {
       <div className="container-fluid">
         <Header />
         <div className="row mt-5" id="pageBody">
-          <div className="col-2 offset-1">
+          <div className="col-2 ml-5">
             <Sidebar links={links}/>
           </div>
-          <div className="col-8 offset-1">
+          <div className="col-8 offset-1" id="content">
             <h1>About</h1>
             <p>Welcome to me!</p>
           </div>
