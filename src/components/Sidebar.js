@@ -20,7 +20,7 @@ class Sidebar extends React.Component {
         <ul className="nav flex-column text-center">
           {links.map((link) =>
             <li className="nav-item" key={link.name}>
-              <NavLink className="nav-link navStyle" to={link.path} onMouseOver={() => this.props.setColorHover(link.color)}  onMouseLeave={() => {this.props.setColorText(this.props.colorActive); this.props.setColorHover('black');}}  onClick={() => this.props.setColorActive(link.color)} activeStyle={linkStyle}>{link.name}</NavLink>
+              <NavLink className="nav-link navStyle" to={link.path} onMouseOver={() => this.props.setColorHover(link.color)}  onMouseLeave={() => {this.props.setColorText(this.props.colorActive); this.props.setColorHover('black');}}  onClick={() => this.props.setColorActive(link.color)} style={linkStyle}>{link.name}</NavLink>
             </li>
           )}
         </ul>

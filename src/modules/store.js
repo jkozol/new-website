@@ -5,9 +5,15 @@ import rootReducer from './reducers/index';
 
 export const history = createHistory();
 
-export function configureStore(initialState) {
+export function configureStore() {
 
-  // const initialState = {};
+  const initialState = {
+    colors: {
+      colorText: 'black',
+      colorActive: 'black',
+      colorHover: 'black',
+    },
+  };
 
   const enhancers = [];
 
@@ -22,8 +28,8 @@ export function configureStore(initialState) {
 
   const store = createStore(
     rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     composedEnhancers,
   );
 

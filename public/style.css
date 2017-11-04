@@ -28,12 +28,12 @@ html, body, #app, #app>div {
   align-items: center;
 }
 
-#topNavLine {
+/*#topNavLine {
   content: "";
   display: block;
   border-top: 1px solid #ccc;
   margin: 0 15px;
-}
+}*/
 
 #sidebar {
   background-color: white;
