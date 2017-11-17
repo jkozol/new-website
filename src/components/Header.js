@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from './Logo';
 import NavBarTop from './NavBarTop';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 class Header extends React.Component {
   render() {
@@ -13,15 +14,31 @@ class Header extends React.Component {
       // margin: "0 15px",
     };
 
+    const StyledDiv = styled.div`
+      // margin-bottom: -1px;
+      padding: 0px;
+      margin: 0px;
+      // position: relative;
+      // top: -1px;
+      // border-bottom: 2px solid ${props => props.colorActive};
+      // $:after {
+      //   border-bottom: 2px solid ${props => props.colorActive};
+      // };
+      // $:before {
+      //   border-bottom: 2px solid ${props => props.colorActive};
+      // };
+    `;
+
+
     return (
       <div>
         <div className="row" id="topNav">
           <div className="col-3" style={navLine}>
             <Logo />
           </div>
-          <div className="col-9 my-auto">
+          <StyledDiv className="col-9 my-auto" colorActive={this.props.colorActive}>
             <NavBarTop />
-          </div>
+          </StyledDiv>
         </div>
       </div>
     );

@@ -1,34 +1,42 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 class NavBarTop extends React.Component {
   render() {
-    const navLine = {
-      // content: "",
-      // borderTopColor: this.props.colorActive,
-      // display: "block",
-      borderBottom: "2px solid " + this.props.colorActive,
-      // margin: "0 15px",
-    };
+    const activeClassName = 'nav-item-active'
 
-    const navStyle = {
-      // display: "block",
-      borderTop: "2px solid " + this.props.colorActive,
-      borderLeft: "2px solid " + this.props.colorActive,
-      borderRight: "2px solid " + this.props.colorActive,
-      borderBottom: '20px solid white !important',
-    };
+    const StyledNavBar = styled.ul`
+      border-bottom: 2px solid ${props => props.colorActive};
+    `;
+
+    const StyledNavLink = styled(NavLink).attrs({
+       activeClassName
+     })`
+      &.${activeClassName} {
+        border: 2px solid ${props => props.colorActive};
+        border-bottom: 2px solid white !important;
+        position: relative;
+        top: 1px;
+      };
+      &.${activeClassName}:hover {
+        border: 2px solid ${props => props.colorActive};
+        border-bottom: 2px solid white !important;
+        position: relative;
+        top: 1px;
+      };
+    `;
 
     return (
-      <ul className="nav" style={navLine}>
-        <div className="nav-item dropdown mx-3">
-          <NavLink className="nav-link" to="/about" activeStyle={navStyle}>About</NavLink>
+      <StyledNavBar className="nav nav-tabs" colorActive={this.props.colorActive}>
+        <div className="nav-item mx-3">
+          <StyledNavLink className="nav-link" to="/about" activeClassName={activeClassName} colorActive={this.props.colorActive}>About</StyledNavLink>
         </div>
-        <div className="nav-item dropdown mx-3">
-          <NavLink className="nav-link" to="/work" activeStyle={navStyle}>Work</NavLink>
+        <div className="nav-item mx-3">
+          <StyledNavLink className="nav-link" to="/work" activeClassName={activeClassName} colorActive={this.props.colorActive}>Work</StyledNavLink>
         </div>
-      </ul>
+      </StyledNavBar>
     );
   }
 };
