@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setColorActive, setColorText, setColorHover } from '../modules/actions/colors';
+import styled from 'styled-components';
 
 
 class Sidebar extends React.Component {
@@ -10,13 +11,24 @@ class Sidebar extends React.Component {
     const { links } = this.props;
     let navStyle = {outlineColor: this.props.colorActive};
     let linkStyle = {color: this.props.colorText};
+
+    const StyledLink= styled(NavLink)`
+      // border: 1px solid ${props => props.colorActive};
+    `;
+
+    const StyledDiv = styled.div`
+      outline-style: solid;
+      outline-color: ${props => props.colorActive};
+      background-color: white;
+      box-shadow: 5px 5px 7px #888888;
+    `;
     // if (this.state.hover) {
     //  linkStyle = {backgroundColor: 'red'}
     // } else {
     //  linkStyle = {backgroundColor: 'blue'}
     // }
     return (
-      <div id="sidebar" style={navStyle}>
+      <StyledDiv id="sidebar" colorActive={this.props.colorActive}>
         <ul className="nav flex-column text-center">
           {links.map((link) =>
             <li className="nav-item" key={link.name}>
@@ -24,7 +36,7 @@ class Sidebar extends React.Component {
             </li>
           )}
         </ul>
-      </div>
+      </StyledDiv>
     );
   }
 };

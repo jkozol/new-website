@@ -1,6 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
+import { setColorActive, setColorText, setColorHover } from '../modules/actions/colors';
+
 
 class About extends React.Component {
   render() {
@@ -15,7 +19,15 @@ class About extends React.Component {
         path: '/about',
         color: 'green',
       },
-    ]
+    ];
+
+    const StyledDiv = styled.div`
+      outline-style: solid;
+      outline-color: ${props => props.colorActive};
+      background-color: white;
+      box-shadow: 5px 5px 7px #888888;
+    `;
+
 
     return (
       <div className="container-fluid">
@@ -24,14 +36,36 @@ class About extends React.Component {
           <div className="col-2 ml-5">
             <Sidebar links={links}/>
           </div>
-          <div className="col-8 offset-1" id="content">
+          <StyledDiv className="col-8 offset-1" id="content" colorActive={this.props.colorActive}>
             <h1>About</h1>
             <p>Welcome to me!</p>
-          </div>
+          </StyledDiv>
         </div>
       </div>
     );
   }
 };
+const makeMapStateToProps = (state, props) => {
+  const mapStateToProps = (state, props) => {
+    return {
+      colorText: state.colors.colorText,
+      colorActive: state.colors.colorActive,
+      colorHover: state.colors.colorHover,
+    }
+  };
+  return mapStateToProps;
+};
 
-export default About;
+const mapDispatchToProps = (dispatch) => ({
+  setColorActive: color => {
+    dispatch(setColorActive(color));
+  },
+  setColorText: color => {
+    dispatch(setColorText(color));
+  },
+  setColorHover: color => {
+    dispatch(setColorHover(color));
+  },
+});
+
+export default connect(makeMapStateToProps, mapDispatchToProps)(About);
