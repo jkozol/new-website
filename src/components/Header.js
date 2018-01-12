@@ -29,9 +29,12 @@ class Header extends React.Component {
       // };
     `;
 
-
+    const NavDiv = styled.div`
+      background-color: #eae8e8;
+      // background-color: #f5f5f5;
+    `;
     return (
-      <div>
+      <NavDiv>
         <div className="row" id="topNav">
           <div className="col-3" style={navLine}>
             <Logo />
@@ -40,7 +43,7 @@ class Header extends React.Component {
             <NavBarTop />
           </StyledDiv>
         </div>
-      </div>
+      </NavDiv>
     );
   }
 };

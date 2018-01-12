@@ -19,7 +19,8 @@ class Sidebar extends React.Component {
     const StyledDiv = styled.div`
       outline-style: solid;
       outline-color: ${props => props.colorActive};
-      background-color: white;
+      background-color: #eae8e8;
+      // background-color: #f5f5f5;
       box-shadow: 5px 5px 7px #888888;
     `;
     // if (this.state.hover) {

@@ -6,15 +6,17 @@ import { history } from '../modules/store';
 import Home from './Home';
 import About from './About';
 import Work from './Work';
+import Test from './Test';
 
 class App extends React.Component {
   render() {
     return (
       <ConnectedRouter history={history}>
         <div>
-          <Route exact path="/home" component={ Home }/>
+          <Route exact path="/" component={ Home }/>
           <Route path="/about" component={ About } />
           <Route path="/work" component={ Work } />
+          <Route path="/test" component={ Test } />
         </div>
       </ConnectedRouter>
     );
